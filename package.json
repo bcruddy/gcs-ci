@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "lightweight utility for uploading ci artifacts to gcs",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bcruddy/gcs-ci.git"
+  },
   "scripts": {
     "test": "jest --no-cache --config=jest.config.js"
   },
