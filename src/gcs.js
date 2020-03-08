@@ -40,13 +40,14 @@ async function writeManifest (config, bucket) {
             cacheControl: 'no-cache'
         }
     };
-    const { branch, buildUrl, repo, job = '<undefined>' } = config;
+    const { branch, buildUrl, commit, repo, job = '<undefined>' } = config;
 
     return new Promise((resolve, reject) => {
         const readable = new Readable();
         const manifest = {
             buildUrl,
             branch,
+            commit,
             job,
             repo,
             timestamp: Date.now()
@@ -72,6 +73,7 @@ async function writeArtifacts (localpath, config, bucket, filenamePrefix = '') {
 
             if (stat.isDirectory()) {
                 const prefix = [filenamePrefix, filename].filter(Boolean).join('/');
+
                 return writeArtifacts(localfilepath, config, bucket, prefix);
             }
 

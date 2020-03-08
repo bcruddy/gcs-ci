@@ -50,6 +50,7 @@ function getConfigFromCircleCiEnv () {
         CIRCLE_BUILD_URL: buildUrl,
         CIRCLE_JOB: job,
         CIRCLE_PROJECT_REPONAME: repo,
+        CIRCLE_SHA1: commit,
         PIPELINE_NUMBER: buildId
     } = process.env;
 
@@ -58,6 +59,7 @@ function getConfigFromCircleCiEnv () {
         buildId,
         buildNumber,
         buildUrl,
+        commit,
         job,
         repo,
         gcsPrefix: [repo, branch, buildId, job, `build_${buildNumber}`].join('/')
@@ -70,6 +72,7 @@ function getConfigFromTravisCiEnv () {
         TRAVIS_BUILD_ID: buildId,
         TRAVIS_BUILD_NUMBER: buildNumber,
         TRAVIS_BUILD_WEB_URL: buildUrl,
+        TRAVIS_COMMIT: commit,
         TRAVIS_REPO_SLUG: repo
     } = process.env;
 
@@ -78,6 +81,7 @@ function getConfigFromTravisCiEnv () {
         buildId,
         buildNumber,
         buildUrl,
+        commit,
         repo,
         gcsPrefix: [repo, branch, `build_${buildNumber}`, `run_${buildId}`].join('/')
     };

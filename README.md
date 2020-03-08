@@ -15,6 +15,15 @@ You'll need to provide the following:
 * `GCS_PROJECT_ID`
 * `GCS_BUCKET_NAME`
 * `GCLOUD_SERVICE_KEY` - if you env has already authorized `gcloud` this isn't required
+* `PIPELINE_NUMBER` - this is required only for circle CI and can be passed via:
+    * `PIPELINE_NUMBER=<< pipeline.number >> npm run <gcs-ui command>`
+
+`gcs-ci` leverages your CI service's environment variables to build a reasonable file prefix as well as includes a manifest describing the job the artifacts were generated from. They're pushed to the GCS bucket provided above. Depending on your platform, artifacts will be stored with the prefix:
+
+* circleci
+    * `<bucket>/<repo>/<branch>/<pipeline number>/<job>/build_<build number>`
+* travisci
+    * `<bucket>/<repo>/<branch>/build_<build number>/run_<build id>`
 
 ## usage
 
