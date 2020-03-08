@@ -1,5 +1,6 @@
-coverage
-node_modules
-mock-artifacts
-tests
+coverage/
+node_modules/
+mock-artifacts/
+tests/
+env/
 jest.config.js
