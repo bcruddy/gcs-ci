@@ -1,3 +1,5 @@
 coverage
 node_modules
 mock-artifacts
+env/*
+!env/*.example.sh

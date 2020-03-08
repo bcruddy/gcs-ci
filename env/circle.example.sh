@@ -1,5 +1,5 @@
-export GCS_BUCKET_NAME="pendo-dev-cypress-artifacts";
-export GCS_PROJECT_ID="pendo-dev";
+export GCS_BUCKET_NAME="some-bucket-name";
+export GCS_PROJECT_ID="some-project-id";
 export CIRCLECI="true";
 export CIRCLE_BRANCH="local-branch-1";
 export CIRCLE_BUILD_NUM="local-build-123";

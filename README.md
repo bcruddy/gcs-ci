@@ -8,7 +8,7 @@ CircleCI and TravisCI are currently the only supported platforms, feel free to o
 
 ## setup
 
-`gcs-ci` will automatically detected your CI environemnnt and pull in the necessary environmennt variables to deploy to GCS.
+`gcs-ci` will automatically detected your CI environmennt and pull in the necessary environmennt variables to deploy to GCS.
 
 You'll need to provide the following:
 
@@ -24,10 +24,14 @@ js:
 ```javascript
 const gcsCi = require('gcs-ci');
 
-gcsCi.writeToGcs('path/to/artifacts');
+gcsCi.writeToGcs('path/to/artifacts')
+    .then(() => console.log('success!'))
+    .catch((err) => console.error(err));
 ```
 npm script:
 
 ```
-"write-artifacts": "require('gcs-ci').writeToGcs('path/to/artifacts')"
+"write-artifacts": "node -e \"require('gcs-ci').writeToGcs('path/to/artifacts')\""
 ```
+
+for more information about setup and config, see `src/config.js`

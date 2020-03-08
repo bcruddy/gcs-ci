@@ -1,5 +1,5 @@
-export GCS_BUCKET_NAME="pendo-dev-cypress-artifacts";
-export GCS_PROJECT_ID="pendo-dev";
+export GCS_BUCKET_NAME="some-bucket-name";
+export GCS_PROJECT_ID="some-project-id";
 export TRAVIS="true";
 export TRAVIS_BRANCH="local-branch-1_travis";
 export TRAVIS_BUILD_NUMBER="local-build-123";
