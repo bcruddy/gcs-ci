@@ -8,7 +8,6 @@ jest.mock('fs', () =>({
 
 describe('getConfig', () => {
     beforeEach(() => {
-        process.env.CIRCLE = true;
         envUtils.setup('circleci');
     });
 

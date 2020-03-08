@@ -31,7 +31,7 @@ function setup (name) {
     }
 
     if (name === 'circleci') {
-        process.env.CIRCLE = true;
+        process.env.CIRCLECI = true;
     }
 
     if (name === 'travisci') {
@@ -49,7 +49,7 @@ function teardown () {
     envNames.forEach((name) => {
         const env = CI_ENV[name]();
 
-        Object.keys(env).concat('CIRCLE', 'TRAVIS').forEach((key) => {
+        Object.keys(env).concat('CIRCLECI', 'TRAVIS').forEach((key) => {
             delete process.env[key];
         });
     });

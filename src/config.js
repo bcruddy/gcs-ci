@@ -18,7 +18,7 @@ function getConfig () {
 
 function getConfigFromEnv () {
     const {
-        CIRCLE,
+        CIRCLECI,
         TRAVIS,
         GCLOUD_SERVICE_KEY: gcloudServiceKey,
         GCS_BUCKET_NAME: gcsBucketName,
@@ -26,7 +26,7 @@ function getConfigFromEnv () {
     } = process.env;
     let config
 
-    if (CIRCLE) {
+    if (CIRCLECI) {
         config = getConfigFromCircleCiEnv();
     } else if (TRAVIS) {
         config = getConfigFromTravisCiEnv();
