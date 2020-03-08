@@ -5,6 +5,7 @@ const USER_ENV = () => ({
 });
 const CI_ENV = {
     circleci: () => ({
+        CIRCLECI: true,
         CIRCLE_BRANCH: 'foo-1',
         CIRCLE_BUILD_NUM: '123',
         CIRCLE_BUILD_URL: 'https://circleci.com/fake/url',
@@ -14,6 +15,7 @@ const CI_ENV = {
         ...USER_ENV()
     }),
     travisci: () => ({
+        TRAVIS: true,
         TRAVIS_BRANCH: 'foo-1',
         TRAVIS_BUILD_ID: '4567',
         TRAVIS_BUILD_NUMBER: '123',
@@ -30,14 +32,6 @@ function setup (name) {
         throw new Error(`env "${name}" not found.`);
     }
 
-    if (name === 'circleci') {
-        process.env.CIRCLECI = true;
-    }
-
-    if (name === 'travisci') {
-        process.env.TRAVIS = true;
-    }
-
     Object.entries(env()).forEach(([key, value]) => {
         process.env[key] = value;
     });
@@ -49,7 +43,7 @@ function teardown () {
     envNames.forEach((name) => {
         const env = CI_ENV[name]();
 
-        Object.keys(env).concat('CIRCLECI', 'TRAVIS').forEach((key) => {
+        Object.keys(env).forEach((key) => {
             delete process.env[key];
         });
     });

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="12.545" tests="4" failures="0">
+  <testsuite name="Root Suite" timestamp="2020-03-07T04:57:52" tests="0" failures="0" time="0">
+  </testsuite>
+  <testsuite name="guide steps" timestamp="2020-03-07T04:57:52" tests="4" failures="0" time="12.545">
+    <testcase name="guide steps loads the guide" time="7.897" classname="loads the guide">
+    </testcase>
+    <testcase name="guide steps adds a step" time="3.213" classname="adds a step">
+    </testcase>
+    <testcase name="guide steps deletes a step" time="0.529" classname="deletes a step">
+    </testcase>
+    <testcase name="guide steps duplicates a step" time="0.906" classname="duplicates a step">
+    </testcase>
+  </testsuite>
+</testsuites>
