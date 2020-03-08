@@ -5,5 +5,5 @@ export CIRCLE_BRANCH="local-branch-1";
 export CIRCLE_BUILD_NUM="local-build-123";
 export CIRCLE_BUILD_URL="https://local.build.url";
 export CIRCLE_JOB="local-dev-job";
-export CIRCLE_PROJECT_REPONAME="ruddy-test";
+export CIRCLE_PROJECT_REPONAME="gcs-ci__dev";
 export PIPELINE_NUMBER="local-pipeline-1";
